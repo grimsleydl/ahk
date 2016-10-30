@@ -12,4 +12,4 @@ SetWinDelay, -1
 SetControlDelay, -1
 SendMode Input
 
-#F::SendInput, {LWin down}{F3}{LWin up}
+!Appskey::Appskey
