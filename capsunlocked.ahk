@@ -1,7 +1,4 @@
 #NoEnv
-#MaxHotkeysPerInterval 99000000
-#HotkeyInterval 99000000
-#KeyHistory 0
 ListLines Off
 Process, Priority, , A
 SetBatchLines, -1
@@ -11,6 +8,7 @@ SetDefaultMouseSpeed, 0
 SetWinDelay, -1
 SetControlDelay, -1
 SendMode Input
+
 
 ; This is a complete solution to map the CapsLock key to Control and Escape without losing the ability to toggle CapsLock
 ; We use two tools here - any remapping software to map CapsLock to LControl and AutoHotkey to execute the following script
