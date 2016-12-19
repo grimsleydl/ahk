@@ -53,3 +53,7 @@ else if GetKeyState("CapsLock", "F") = 0
 {
   SetCapsLockState, on
 }
+
+^Escape::return
+
+LControl & Escape::return
