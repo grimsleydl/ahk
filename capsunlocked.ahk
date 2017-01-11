@@ -1,4 +1,5 @@
 #NoEnv
+#SingleInstance force
 ListLines Off
 Process, Priority, , A
 SetBatchLines, -1
