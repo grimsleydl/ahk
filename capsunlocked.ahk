@@ -1,4 +1,7 @@
 #NoEnv
+#SingleInstance force
+#MaxHotkeysPerInterval 99000000
+#HotkeyInterval 99000000
 ListLines Off
 Process, Priority, , A
 SetBatchLines, -1
@@ -57,3 +60,5 @@ else if GetKeyState("CapsLock", "F") = 0
 ^Escape::return
 
 LControl & Escape::return
+Escape & LControl::return
+Escape::Escape
