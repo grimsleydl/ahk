@@ -38,3 +38,15 @@ SendInput por/freeleech
 Sleep 25
 SendInput {Enter}
 Return
+
+$^K::
+SendInput {AppsKey}
+SendInput {Up 13}
+SendInput {Right}
+SendInput {Enter}
+WinWaitActive Category
+Sleep 25
+SendInput por/queue
+Sleep 25
+SendInput {Enter}
+Return
