@@ -20,85 +20,28 @@ SetTitleMatchMode, 3 ;The window title must match EXACTLY
 ; SetScrollLockState,Off
 ; SetScrollLockState,AlwaysOff
 
-; *;::
-;   ; Send {`; down}
-;   semicolon_held := 1
-; while (semicolon_held){
-;   j::Down
-;   h::Left
-;   k::Up
-;   l::Right
-;   u::^z
-;   [::Send {End}
-;   ]::Send {PgDn}
-;   =::Send {PgUp}
-;   Space::Send {Return}
-;   0::Send {PgUp}
-;   1::6
-;   2::7
-;   3::8
-;   4::9
-;   5::
-; }
-; return
-; *$`; up::
-; if (semicolon_held := 1){
-;   if (semicolon_send){
-;   send {`;}
-;   }
-;   semicolon_held := 0
-; }
-; return
-;
-; last_ctrl_down_time := 0
-; ctrl_used := false
-; ctrl_down := false
-
-; *CapsLock::
-;   if (ctrl_down) {
-;     return
-;   }
-;   Send {Ctrl Down}
-;   last_ctrl_down_time := A_TickCount
-;   ctrl_used := false
-;   ctrl_down := true
-;   return
-
-; *CapsLock Up::
-;   Send {Ctrl Up}
-;   ctrl_down := false
-;   if (ctrl_used) {
-;       return
-;   }
-;   time_elapsed := A_TickCount - last_ctrl_down_time
-;   if (time_elapsed <= 250) {
-;     Send {Blind}{Esc}
-;   }
-;   return
-
 last_semicolon_down_time := 0
 semicolon_used := false
 semicolon_down := false
 
-*;::
+$*;::
   if (semicolon_down) {
     return
   }
-  
   semicolon_used := false
   semicolon_down := true
-  last_semicolon_down_time := A_TickCount
+  ; last_semicolon_down_time := A_TickCount
   return
 
-*; Up::
+$*; Up::
   semicolon_down := false
   if (semicolon_used) {
     return
   }
-  time_elapsed := A_TickCount - last_semicolon_down_time
-  if (time_elapsed <= 250) {
+  ; time_elapsed := A_TickCount - last_semicolon_down_time
+  ; if (time_elapsed <= 150) {
     Send {Blind}{;}
-  }
+  ; }
   return
 
 ; ~*a::
