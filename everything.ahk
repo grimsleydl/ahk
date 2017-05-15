@@ -13,4 +13,6 @@ SetControlDelay, -1
 SendMode Input
 #SingleInstance force
 
-#F::SendInput, {LWin down}{F3}{LWin up}
+#F::
+SendInput, {LWin down}{F3}{LWin up}
+WinActivateBottom, Everything
