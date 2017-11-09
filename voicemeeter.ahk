@@ -13,7 +13,17 @@ SetControlDelay, -1
 SendMode Input
 #SingleInstance force
 
-#F::
-SendInput, {LWin down}{F3}{LWin up}
-Sleep 30
-WinActivate, Everything
+!Pause::
+Process, Exist, VoicemeeterMacroButtons.exe
+{
+  if ! errorLevel {
+    Run "C:\Program Files (x86)\VB\Voicemeeter\VoicemeeterMacroButtons.exe"
+  }
+  ; else
+  ; {
+  ; }
+  Sleep 25
+}
+WinActivate, Voicemeeter.Remote
+SendInput, {F23}
+return
